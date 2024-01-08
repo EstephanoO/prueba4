@@ -7,7 +7,7 @@ import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import { pb } from '@/lib/db';
 
 const navigation = [
-  { name: 'Formularios', href: '/Formularios' },
+  { name: 'Formularios', href: '/Tabla' },
   { name: 'Ubicaciones', href: '/Ubicaciones' },
   { name: 'RA', href: '/RA' },
   { name: 'Archivos', href: '/Archivos' },
