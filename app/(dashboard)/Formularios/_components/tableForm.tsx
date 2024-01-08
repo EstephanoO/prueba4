@@ -10,7 +10,7 @@ import axios from 'axios';
 
 const columns: GridColDef[] = [
   { field: 'Fecha', headerName: 'Fecha', width: 110 },
-  { field: 'Grupo', headerName: 'Grupo', width: 200 },
+  { field: 'Grupos', headerName: 'Grupo', width: 200 },
   { field: 'TipoTrabajo', headerName: 'Tipo Trabajo', width: 120 },
   { field: 'TrabajoRealizado', headerName: 'Trabajo Realizado', width: 130 },
   { field: 'Ubicacion', headerName: 'Ubicacion', width: 130 },

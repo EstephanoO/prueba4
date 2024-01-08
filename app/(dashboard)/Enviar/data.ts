@@ -5,7 +5,7 @@ export interface Option {
 }
 
 // Define un tipo personalizado para las claves de tus preguntas
-export type QuestionKeys = "Fecha" | "Grupo" | "NombresGrupo" | "TipoTrabajo" | "TrabajoRealizado" | "Ubicacion" | "Observacion";
+export type QuestionKeys = "Fecha" | "Grupos2" | "Grupos" | "TipoTrabajo" | "TrabajoRealizado" | "Ubicacion" | "Observacion";
 
 export interface Question {
   name: QuestionKeys;
@@ -20,9 +20,10 @@ export const questions: Question[] = [
     name: "Fecha",
     label: "Fecha",
     required: true,
+    type: "date"
   },
   {
-    name: "Grupo",
+    name: "Grupos2",
     label: "¿El trabajo fue en grupo?",
     type: "radio",
     options: [
@@ -37,18 +38,32 @@ export const questions: Question[] = [
     ],
   },
   {
-    name: "NombresGrupo",
-    label: "Nombres del grupo",
+    name: "Grupos",
+    label: "Grupos",
     required: true,
   },
   {
     name: "TipoTrabajo",
     label: "Tipo de trabajo",
+    type: "select", // Actualizado a "select"
+    options: [
+      { label: "RD", value: "RD" },
+      { label: "RA", value: "RA" },
+      { label: "DP", value: "DP" },
+      { label: "BANDEJAS", value: "BANDEJAS" },
+      { label: "INSTALACIONES", value: "INSTALACIONES" },
+      { label: "ACTIVACIONES", value: "ACTIVACIONES" },
+      { label: "ACTIVACIONES Y INSTALACIONES", value: "BOTH" },
+      { label: "SOPLADO", value: "SOPLADO" },
+      { label: "FUSIONES", value: "FUSIONES" },
+      { label: "OTROS", value: "OTROS" },
+    ],
     required: true,
   },
   {
     name: "TrabajoRealizado",
     label: "Trabajo realizado",
+    type: "number",
     required: true,
   },
   {
