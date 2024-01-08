@@ -6,7 +6,7 @@ import { cn } from "@/lib/utils"
 import { buttonVariants } from "@/components/ui/button"
 import { UserAuthForm } from "./_components/user-auth-form"
 
-export const metadata: Metadata = {
+export const metadata = {
   title: "Authentication",
   description: "Authentication forms built using the components.",
 }
@@ -30,7 +30,7 @@ export default function AuthenticationPage() {
             >
               <path d="M15 6v12a3 3 0 1 0 3-3H6a3 3 0 1 0 3 3V6a3 3 0 1 0-3 3h12a3 3 0 1 0-3-3" />
             </svg>
-           Pym App 
+            Pym App
           </div>
         </div>
         <div className="lg:p-8">

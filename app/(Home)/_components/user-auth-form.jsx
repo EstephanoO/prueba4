@@ -7,16 +7,27 @@ import { Icons } from "@/components/icons"
 import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
+import { pb } from "@/lib/db"
+import { useRouter } from "next/navigation"
 
-interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
 
-export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
-  const [isLoading, setIsLoading] = React.useState<boolean>(false)
+export function UserAuthForm({ className, ...props }) {
+  const router = useRouter()
+  const [isLoading, setIsLoading] = React.useState(false)
 
-  async function onSubmit(formData: FormData) {
-    const email = formData.get('email')
+  async function onSubmit(formData) {
+    const username = formData.get('email')
     const password = formData.get('password')
-    const userLogin = { email, password }
+    if (!username || password) {
+      console.error('new error')
+    }
+    const authData = await pb.collection('users').authWithPassword(username.toString(), password.toString());
+    if (authData) {
+      router.push('/Formularios')
+
+
+    }
+
 
     setIsLoading(true)
 
@@ -37,7 +48,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
               id="email"
               name="email"
               placeholder="email or username"
-              type="email"
+              type="text"
               autoCapitalize="none"
               autoComplete="email"
               autoCorrect="off"
@@ -64,7 +75,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             {isLoading && (
               <Icons.spinner className="mr-2 h-4 w-4 animate-spin" />
             )}
-            Sign In with Email
+            Sign In
           </Button>
         </div>
       </form>
