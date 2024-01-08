@@ -63,7 +63,7 @@ const TableForm = () => {
 
   return (
     <div style={{ height: 400, width: '100%' }}>
-      <DataGrid rows={rows} columns={updatedColumns}  />
+      <DataGrid rows={rows} columns={updatedColumns} />
     </div>
   );
 };

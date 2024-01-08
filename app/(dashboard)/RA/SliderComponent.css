@@ -1,0 +1,106 @@
+/* SliderComponent.css */
+
+.slider-container {
+  width: 100%; /* Ancho del contenedor interno */
+  max-width: 2000px; /* Ancho máximo */
+  margin: 0 auto;
+  background-color: #e1ebea;
+}
+
+.slider {
+  position: relative;
+  height: 20px; /* Altura del slider */
+  margin-top: 0px;
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: #51544e;
+}
+/* Estilos para el contenedor de las tablas */
+.tables-container {
+  display: flex; /* Utilizar flexbox para organizar los elementos en una fila */
+  width: 100%; /* Ocupar todo el ancho disponible */
+  margin-top: 20px; /* Ajustar margen superior según necesites */
+  /* Otros estilos según tu diseño */
+}
+
+/* Estilos para cada contenedor individual de tabla */
+.table-wrapper {
+  flex: 1; /* Hacer que cada tabla ocupe un espacio igual */
+  margin-right: 10px; /* Agregar margen derecho entre las tablas */
+  /* Otros estilos según tu diseño */
+}
+
+  
+  /* Estilos para los marcadores del slider */
+  /* Puedes agregar más estilos según sea necesario */
+  .slider div {
+    position: absolute;
+    transform: translateX(-50%);
+    width: 10px;
+    height: 20px;
+    border-radius: 25%;
+    background: #afcae6;
+    cursor: pointer;
+  }
+  
+  .slider div span {
+    position: absolute;
+    bottom: 30px;
+    left: -50%;
+    white-space: nowrap;
+    transform: translateX(-50%);
+  }
+  
+  .slider div button {
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #000;
+    border-radius: 5px;
+    background: #fff;
+    padding: 5px;
+    cursor: pointer;
+  }
+  /* Estilos para el tooltip */
+  .slider-container .slider div {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Estilos para el texto del tooltip */
+  .slider-container .slider div::before {
+    content: attr(title);
+    position: absolute;
+    bottom: calc(100% + 5px); /* Posición del tooltip */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(0, 0, 0, 0.8); /* Color de fondo del tooltip */
+    color: white; /* Color del texto del tooltip */
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+  }
+  
+  /* Mostrar el tooltip al pasar el mouse sobre el marcador */
+  .slider-container .slider div:hover::before {
+    opacity: 1;
+  }
+  /* SliderComponent.css */
+
+.slider-wrapper {
+  width: 100%; /* Ancho del contenedor principal */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+
+/* Resto de los estilos... */
+
+  

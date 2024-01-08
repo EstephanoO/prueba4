@@ -1,23 +1,24 @@
 'use client'
 
 import React, { useState } from 'react';
-import { Button, TextField } from "@mui/material";
+import { TextField } from "@mui/material";
 import axios from 'axios';
 import { pb } from '@/lib/db';
 import { API_URL } from '@/app/(dashboard)/Formularios/_components/dataTable';
 import { Coordinates } from '@/lib/types';
+import { Button } from '@/components/ui/button';
 
 const GeoButton = () => {
-    const [location, setLocation] = useState<Coordinates>({ longitud: null, latitud: null });
-    const [descripcion, setDescripcion] = useState('');
+  const [location, setLocation] = useState<Coordinates>({ longitud: null, latitud: null });
+  const [descripcion, setDescripcion] = useState('');
 
   const handleEnviarUbicacion = () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(
         (position) => {
-            const { longitude, latitude } = position.coords;
-            setLocation({ longitud: longitude, latitud: latitude });
-  
+          const { longitude, latitude } = position.coords;
+          setLocation({ longitud: longitude, latitud: latitude });
+
           // Verificar si la descripción está vacía
           const descripcionFinal = descripcion.trim() === '' ? 'Ubicación sin descripción' : descripcion.trim();
           const userId = pb.authStore.model?.id
@@ -46,7 +47,7 @@ const GeoButton = () => {
   };
 
   return (
-    <div>
+    <div className='m-4 pb-2 '>
       {/* Campo de entrada para la descripción */}
       <TextField
         label="Descripción"
@@ -58,7 +59,7 @@ const GeoButton = () => {
       />
 
       {/* Botón para enviar la ubicación */}
-      <Button variant="contained" color="primary" onClick={handleEnviarUbicacion}>
+      <Button color="primary" onClick={handleEnviarUbicacion}>
         Enviar Ubicación
       </Button>
     </div>

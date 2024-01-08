@@ -7,7 +7,7 @@ import { GeoButton } from './_components/Geo';
 const UbiPage = () => {
 
   return (
-    <Container maxWidth="lg">
+    <div className='m-12'>
       <Grid container spacing={3}>
         <Grid item xs={12}>
           <Paper>
@@ -16,19 +16,18 @@ const UbiPage = () => {
         </Grid>
         <Grid item xs={12}>
           <Paper>
-            {/* TableUbi Component */}
             <TableUbi />
           </Paper>
         </Grid>
         <Grid item xs={12}>
           <Paper>
-            {/* MapView Component */}
             <Map />
           </Paper>
         </Grid>
       </Grid>
-    </Container>
+    </div>
   );
 };
 
 export default UbiPage;
+

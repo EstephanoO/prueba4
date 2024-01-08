@@ -8,16 +8,16 @@ import { Label } from "@/components/ui/label"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
 
-interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> {}
+interface UserAuthFormProps extends React.HTMLAttributes<HTMLDivElement> { }
 
 export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
   const [isLoading, setIsLoading] = React.useState<boolean>(false)
 
-  async function onSubmit(formData :FormData) {
+  async function onSubmit(formData: FormData) {
     const email = formData.get('email')
     const password = formData.get('password')
-    const userLogin = {email, password}
-    
+    const userLogin = { email, password }
+
     setIsLoading(true)
 
     setTimeout(() => {
@@ -36,7 +36,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
             <Input
               id="email"
               name="email"
-              placeholder="name@example.com"
+              placeholder="email or username"
               type="email"
               autoCapitalize="none"
               autoComplete="email"
@@ -46,7 +46,7 @@ export function UserAuthForm({ className, ...props }: UserAuthFormProps) {
           </div>
           <div className="grid gap-1">
             <Label className="sr-only" htmlFor="email">
-             Password 
+              Password
             </Label>
             <Input
               id="password"
