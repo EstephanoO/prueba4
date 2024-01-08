@@ -23,7 +23,7 @@ export function UserAuthForm({ className, ...props }) {
     }
     const authData = await pb.collection('users').authWithPassword(username.toString(), password.toString());
     if (authData) {
-      router.push('/Formularios')
+      router.push('/tabla')
 
 
     }
